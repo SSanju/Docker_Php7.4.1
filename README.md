@@ -12,4 +12,4 @@ Semaphore php-sysvsem
 PORT 9000:80
 
 Docker Imgage 
-https://hub.docker.com/repository/docker/sanjusurendran/sanju-php-7.4
+https://hub.docker.com/r/sanjusurendran/sanju-php-7.4
