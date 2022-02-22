@@ -1,0 +1,10 @@
+version: '3.7'
+services: 
+  sanju-php-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 'sanju-php-7.4'
+    container_name: sanju-custom-container
+    ports:
+      - 9000:80
