@@ -34,10 +34,6 @@ COPY index.html /var/www/html/index.html
 
 # Configuration File settings
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN sed -i -e 's/;extension=pgsql/extension=pgsql/' /usr/local/etc/php/php.ini-development
-RUN sed -i -e 's/;extension=pdo_pgsql/extension=pdo_pgsql/' /usr/local/etc/php/php.ini-development
-RUN sed -i -e 's/;extension=pgsql/extension=pgsql/' /usr/local/etc/php/php.ini-production
-RUN sed -i -e 's/;extension=pdo_pgsql/extension=pdo_pgsql/' /usr/local/etc/php/php.ini-production
 RUN sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize=20M/' /usr/local/etc/php/php.ini-development
 RUN sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize=20M/' /usr/local/etc/php/php.ini-production
 RUN sed -i -e 's/post_max_size = 8M/post_max_size=120M/' /usr/local/etc/php/php.ini-development
