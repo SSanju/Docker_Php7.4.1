@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install zip \
     && docker-php-source delete
 
-RUN docker-php-ext-install pdo pdo_pgsql
+RUN docker-php-ext-install pdo pdo_pgsql pgsql
 RUN apt-get install nano -y
 RUN apt install libxrender-dev libxrender1 libfontconfig1 -y
 
