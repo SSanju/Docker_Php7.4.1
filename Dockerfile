@@ -4,7 +4,7 @@ USER root
 
 WORKDIR /var/www/html
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get --allow-releaseinfo-change update && apt-get update && apt-get install -y \
         zlib1g-dev \
         libxml2-dev \
         libzip-dev \
@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         zip \
         xvfb \
         curl \
+        cron \
         unzip \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -27,6 +28,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install pdo pdo_pgsql pgsql
 RUN apt-get install nano -y
+RUN apt install supervisor -y
 RUN apt install libxrender-dev libxrender1 libfontconfig1 -y
 
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
